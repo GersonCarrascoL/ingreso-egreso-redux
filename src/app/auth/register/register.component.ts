@@ -14,7 +14,7 @@ import { AuthService } from '../auth.service';
 export class RegisterComponent implements OnInit {
 
 	cargando: boolean;
-	subscription: Subscription;
+	subscription: Subscription = new Subscription();
 
 	constructor(
 		public authService: AuthService,

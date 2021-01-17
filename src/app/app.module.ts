@@ -22,8 +22,13 @@ import { appReducer } from './app.reducer';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+
+// Charts
+import { ChartsModule } from 'ng2-charts';
+
 import { environment } from 'src/environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { OrdenIngresoEgresoPipe } from './ingreso-egreso/orden-ingreso-egreso.pipe';
 
 @NgModule({
 	declarations: [
@@ -36,7 +41,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 		DetalleComponent,
 		FooterComponent,
 		NavbarComponent,
-		SidebarComponent
+		SidebarComponent,
+		OrdenIngresoEgresoPipe
 	],
 	imports: [
 		FormsModule,
@@ -52,7 +58,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 		AngularFireModule.initializeApp(environment.firebase),
 		AngularFirestoreModule,
-		AngularFireAuthModule
+		AngularFireAuthModule,
+
+		ChartsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
